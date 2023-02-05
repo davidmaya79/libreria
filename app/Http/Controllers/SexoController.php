@@ -91,6 +91,7 @@ class SexoController extends Controller
      */
     public function destroy(Sexo $sexo)
     {
-        //
+        $sexo->delete();
+        return redirect()->route('sexos.index');
     }
 }

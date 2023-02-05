@@ -11,7 +11,9 @@
             </div>
         </div>
         <div class="col-md-12">
-            <form  action="" method="" class="row g-3">
+            <form  action="{{ route('sexos.update',$sexo) }}" method="POST" class="row g-3">
+                @csrf
+                @method('PUT')
               <div class="col-md-6">
                 <label for="descripcion" class="form-label">Descripción de Sexo</label>
                 <input type="text" class="form-control shadow-none" id="descripcion" name="descripcion" value="{{ $sexo->descripcion }}">

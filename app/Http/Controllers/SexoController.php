@@ -76,7 +76,11 @@ class SexoController extends Controller
      */
     public function update(Request $request, Sexo $sexo)
     {
-        //
+        $request->validate([
+            'descripcion' => 'required|min:3|max:100|unique:lib_sexo'
+        ]);
+        $sexo->update($request->all());
+        return back();
     }
 
     /**

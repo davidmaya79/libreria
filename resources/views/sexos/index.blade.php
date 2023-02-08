@@ -3,6 +3,11 @@
 @section('content')
     <div class="container">
         <div class="row">
+            @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+            </div>
+            @endif
             <div class="col-md-12">
                 <div class="pull-right">
                     <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Agregar Sexo" href="{{  route('sexos.create') }}"> 

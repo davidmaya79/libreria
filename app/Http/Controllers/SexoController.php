@@ -42,7 +42,9 @@ class SexoController extends Controller
 
         Sexo::create($request->all());
 
-        return redirect()->route('sexos.index');
+        return redirect()
+                ->route('sexos.index')
+                ->with('success','Sexo registrado correctamente.');
     }
 
     /**

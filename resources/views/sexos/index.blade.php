@@ -10,7 +10,10 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-12"></div>
+            <div class="col-md-12"> 
+            @if(sizeof($sexos)> 0)
+                
+             
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -50,7 +53,9 @@
                     </tbody>
                 </table>
             </div>
-            
+            @else
+        <div class="alert alert-secondary">No se encontraron resultados.</div>
+            @endif
             
             
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

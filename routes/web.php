@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SexoController;
+use App\Http\Controllers\IdiomaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Route::get('/', function () {
 // Route::get('/', [SexoController::class, 'index']);
 
 Route::resource('sexos', SexoController::class);
-
+Route::resource('idiomas', IdiomaController::class);
 
 
  

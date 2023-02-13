@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sexo;
+use App\Models\Idioma;
 use Illuminate\Http\Request;
 
-class SexoController extends Controller
+class IdiomaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class SexoController extends Controller
      */
     public function index()
     {
-        $sexos = Sexo::orderBy('cod_sexo','ASC')->get();
-        return view('sexos.index',[ 'sexos' => $sexos]);
+        $idiomas = Idioma::orderBy('cod_idioma','ASC')->get();
+        return view('idiomas.index',[ 'idiomas' => $idiomas]);
     }
 
     /**

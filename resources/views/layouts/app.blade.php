@@ -38,6 +38,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href = "">Sexos</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href = "{{ route('idiomas.index') }}">Idiomas</a>
+                        </li>
                     </ul>
                 </div>
             </div>

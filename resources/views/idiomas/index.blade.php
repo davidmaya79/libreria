@@ -3,20 +3,20 @@
 @section('content')
     <div class="container">
         <div class="row">
-            @if (session('success'))
+            {{-- @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}
             </div>
-            @endif
+            @endif --}}
             <div class="col-md-12">
                 <div class="pull-right">
-                    <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Agregar Sexo" href="{{  route('sexos.create') }}"> 
+                    <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Agregar Sexo" href="{{  route('idiomas.create') }}"> 
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
             </div>
             <div class="col-md-12"> 
-            @if(sizeof($sexos)> 0)
+            @if(sizeof($idiomas)> 0)
                 
              
             <div class="table-responsive">
@@ -29,36 +29,36 @@
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach($sexos as $sexo)
+                        @foreach($idiomas as $idioma)
                         <tr>
                             <td class="text-center" width="20%">
-                                <a href="{{ route('sexos.show' , $sexo) }}" class="btn btn-primary btn-sm shadow-none" 
-                                        data-toggle="tooltip" data-placement="top" title="Ver Sexo">
+                                <a href="{{ route('idiomas.show' , $idioma) }}" class="btn btn-primary btn-sm shadow-none" 
+                                        data-toggle="tooltip" data-placement="top" title="Ver idioma">
                                     <i class="fa fa-book fa-fw text-white"></i></a>
                                 </a>
-                                <a href="{{ route('sexos.edit' , $sexo) }}" class="btn btn-success btn-sm shadow-none" 
-                                        data-toggle="tooltip" data-placement="top" title="Editar Sexo">
+                                <a href="{{ route('idiomas.edit' , $idioma) }}" class="btn btn-success btn-sm shadow-none" 
+                                        data-toggle="tooltip" data-placement="top" title="Editar idioma">
                                     <i class="fa fa-pencil fa-fw text-white"></i></a>
                                 </a>
-                                <form action="{{ route('sexos.destroy' , $sexo) }}" method="POST" class="d-inline-block">
+                                <form action="{{ route('idiomas.destroy' , $idioma) }}" method="POST" class="d-inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button id="delete" name="delete" type="submit" 
                                             class="btn btn-danger btn-sm shadow-none" 
-                                            data-toggle="tooltip" data-placement="top" title="Eliminar Sexo"
+                                            data-toggle="tooltip" data-placement="top" title="Eliminar idioma"
                                             onclick="return confirm('¿Estás seguro de eliminar?')">
                                         <i class="fa fa-trash-o fa-fw"></i>
                                     </button>
                                 </form>
                             </td>
-                            <td scope="row">{{ $sexo->cod_sexo }}</td>
-                            <td scope="row">{{ $sexo->descripcion }}</td>
+                            <td scope="row">{{ $idioma->cod_idioma }}</td>
+                            <td scope="row">{{ $idioma->descripcion }}</td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
                 {{-- <div class="d-flex justify-content-center">
-                    {!!  $sexos->links() !!}
+                    {!!  $idiomas->links() !!}
                 </div> --}}
             </div>
             @else

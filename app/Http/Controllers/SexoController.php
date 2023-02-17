@@ -87,10 +87,10 @@ class SexoController extends Controller
         ]));
 
         if($sexo->isClean()){
-            return back()->with('mensajedeadvertencia','Debe realizar al menos un cambio para actualizar.');
+            return back()->with('warning','Debe realizar al menos un cambio para actualizar.');
         }
         $sexo->update($request->all());
-        return back()->with('mensajedeexito','Sexo Actualizado Correctamemte.');;
+        return back()->with('success','Sexo Actualizado Correctamemte.');;
     }
 
     /**
@@ -102,6 +102,6 @@ class SexoController extends Controller
     public function destroy(Sexo $sexo)
     {
         $sexo->delete();
-        return redirect()->route('sexos.index');
+        return back()->with('danger','Sexo Eliminado Correctamente.');
     }
 }

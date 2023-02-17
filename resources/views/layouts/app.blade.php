@@ -36,7 +36,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href = "">Sexos</a>
+                            <a class="nav-link" href = "{{ route('sexos.index') }}">Sexos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href = "{{ route('idiomas.index') }}">Idiomas</a>

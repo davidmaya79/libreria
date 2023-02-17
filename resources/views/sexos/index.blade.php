@@ -8,6 +8,11 @@
                 {{ session('success') }}
             </div>
             @endif
+            @if (session('danger'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('danger') }}
+            </div>
+            @endif
             <div class="col-md-12">
                 <div class="pull-right">
                     <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Agregar Sexo" href="{{  route('sexos.create') }}"> 

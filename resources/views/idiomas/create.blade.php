@@ -5,16 +5,16 @@
     <div class="row">
         <div class="col-md-12">
             <div class="pull-right">
-                <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Inicio" href="{{ route('sexos.index') }}"> 
+                <a class="btn btn-primary shadow-none" data-toggle="tooltip" data-placement="top" title="Inicio" href="{{ route('idiomas.index') }}"> 
                     <i class="fa fa-home fa-fw"></i> 
                 </a>
             </div>
         </div>
         <div class="col-md-12">
-            <form  action="{{ route('sexos.store') }}" method="POST" class="row g-3">
+            <form  action="{{ route('idiomas.store') }}" method="POST" class="row g-3">
                 @csrf
               <div class="col-md-6">
-                <label for="descripcion" class="form-label">Descripción de Sexo</label>
+                <label for="descripcion" class="form-label">Descripción de Idioma</label>
                 <input type="text" class="form-control shadow-none" id="descripcion" name="descripcion" value="{{ old('descripcion') }}">
                 @error('descripcion')
                     <small class="text-danger">

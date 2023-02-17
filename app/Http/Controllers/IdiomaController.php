@@ -25,7 +25,7 @@ class IdiomaController extends Controller
      */
     public function create()
     {
-        return view('sexos.create');
+        return view('idiomas.create');
     }
 
     /**
@@ -37,14 +37,14 @@ class IdiomaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'descripcion' => 'required|min:3|max:100|unique:lib_sexo'
+            'descripcion' => 'required|min:3|max:100|unique:lib_idioma'
         ]);
 
-        Sexo::create($request->all());
+        Idioma::create($request->all());
 
         return redirect()
-                ->route('sexos.index')
-                ->with('success','Sexo registrado correctamente.');
+                ->route('idiomas.index')
+                ->with('success','Idioma registrado correctamente.');
     }
 
     /**
@@ -53,9 +53,9 @@ class IdiomaController extends Controller
      * @param  \App\Models\Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function show(Sexo $sexo)
+    public function show(Idioma $idioma)
     {
-        return view('sexos.show', ['sexo' => $sexo]);
+        return view('idiomas.show', ['idioma' => $idioma]);
     }
 
     /**
@@ -64,9 +64,9 @@ class IdiomaController extends Controller
      * @param  \App\Models\Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sexo $sexo)
+    public function edit(Idioma $idioma)
     {
-        return view('sexos.edit',['sexo'=> $sexo]);
+        return view('idiomas.edit',['idioma'=> $idioma]);
     }
 
     /**
@@ -76,21 +76,21 @@ class IdiomaController extends Controller
      * @param  \App\Models\Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sexo $sexo)
+    public function update(Request $request, Idioma $idioma)
     {
         $request->validate([
-            'descripcion' => 'required|min:3|max:100|unique:lib_sexo,descripcion,'.$sexo->cod_sexo.',cod_sexo'
+            'descripcion' => 'required|min:3|max:100|unique:lib_idioma,descripcion,'.$idioma->cod_idioma.',cod_idioma'
         ]);
 
-        $sexo->fill($request->only([
+        $idioma->fill($request->only([
             'descripcion'
         ]));
 
-        if($sexo->isClean()){
-            return back()->with('mensajedeadvertencia','Debe realizar al menos un cambio para actualizar.');
+        if($idioma->isClean()){
+            return back()->with('warning','Debe realizar al menos un cambio para actualizar.');
         }
-        $sexo->update($request->all());
-        return back()->with('mensajedeexito','Sexo Actualizado Correctamemte.');;
+        $idioma->update($request->all());
+        return back()->with('success','Idioma Actualizado Correctamemte.');;
     }
 
     /**
@@ -99,9 +99,9 @@ class IdiomaController extends Controller
      * @param  \App\Models\Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sexo $sexo)
+    public function destroy(Idioma $idioma)
     {
-        $sexo->delete();
-        return redirect()->route('sexos.index');
+        $idioma->delete();
+        return back()->with('danger','Idioma Eliminado Correctamente.');
     }
 }

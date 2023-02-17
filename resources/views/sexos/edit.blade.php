@@ -3,15 +3,15 @@
 @section('content')
 <div class="container">
     <div class="row">
-        @if (session('mensajedeadvertencia'))
+        @if (session('warning'))
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                {{ session('mensajedeadvertencia') }}
+                {{ session('warning') }}
             </div>
             @endif
 
-            @if (session('mensajedeexito'))
+            @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('mensajedeexito') }}
+                {{ session('success') }}
             </div>
             @endif
 

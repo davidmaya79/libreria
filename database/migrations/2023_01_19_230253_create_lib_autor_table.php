@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombres' ,100);
             $table->string('apellidos' ,100);
             $table->string('nombrecompleto' ,200);
-            $table->unsignedInteger('cod_sexo')->nulable();
+            $table->unsignedInteger('cod_sexo')->nullable();
             $table->foreign('cod_sexo')->references('cod_sexo')->on('lib_sexo');
         });
     }

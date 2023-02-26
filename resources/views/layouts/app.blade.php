@@ -44,6 +44,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href = "{{ route('categorias.index') }}">Categoria</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href = "{{ route('autores.index') }}">Autores</a>
+                        </li>
                     </ul>
                 </div>
             </div>
